@@ -6,7 +6,7 @@ This Rendering Server was build following the Server Architecture approach of ha
 
 The Server is responsible for handling the requests to our [API](https://secure-brushlands-32363.herokuapp.com/), rendering the application and serving it to the user.
 
-[Renderer Server](http://secure-brushlands-32363.herokuapp.com/)
+[Renderer Server](https://pacific-dawn-60366.herokuapp.com/)
 
 > **note:**
 > This README file contains resources about the different steps required to set up a similar SSR Application, making use of isomorphic JavaScript.

@@ -21,9 +21,9 @@ class Resources extends Component {
             to the user).
           </p>
           <p className='info-text'>
-            After the authentication the user then has access to the developer
-            resources for the setup of this application and, as a sweet treat, a
-            few amazing cooking recipes collected over the years by the author
+            After the authentication the user has access to developing resources
+            for the setup of this application and, as a sweet treat, a few
+            amazing cooking recipes collected over the years by the author
             during his previous career as a Chef.
           </p>
           <h2>CODE</h2>

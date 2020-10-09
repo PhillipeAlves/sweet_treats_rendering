@@ -9,22 +9,22 @@ class RecipesPage extends Component {
   }
 
   renderRecipes() {
-    return this.props.recipes.map((recipe) => {
+    return this.props.recipes.map((recipe, id) => {
       return (
-        <div key={recipe.id} className='recipe-container gold-border'>
+        <div key={id} className='recipe-container gold-border'>
           <div className='ui-card inner-ui-card recipe-lg'>
             <div>
               <h1>{recipe.name}</h1>
               <h2>INGREDIENTS</h2>
               <div>
-                {recipe.ingredients.split("&").map((ingredient) => {
+                {recipe.ingredients.split("&").map((ingredient, id) => {
                   if (
                     ingredient == "WET INGREDIENTS" ||
                     ingredient == "DRY INGREDIENTS"
                   ) {
-                    return <h3>{ingredient}</h3>;
+                    return <h3 key={id}>{ingredient}</h3>;
                   } else {
-                    return <p>{ingredient}</p>;
+                    return <p key={id}>{ingredient}</p>;
                   }
                 })}
               </div>
@@ -33,8 +33,8 @@ class RecipesPage extends Component {
             <div>
               <h2>INSTRUCTIONS</h2>
               <div className='info-text'>
-                {recipe.instructions.split("&").map((ingredient) => (
-                  <p>{ingredient}</p>
+                {recipe.instructions.split("&").map((ingredient, id) => (
+                  <p key={id}>{ingredient}</p>
                 ))}
               </div>
             </div>

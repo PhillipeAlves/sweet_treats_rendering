@@ -15,8 +15,8 @@ app.use(
   "/api",
   proxy("http://secure-brushlands-32363.herokuapp.com/", {
     proxyReqOptDecorator(opts) {
-      opts.headers["x-forwarded-host"] = "pacific-dawn-60366.herokuapp.com";
-      //"localhost:3000";
+      opts.headers["x-forwarded-host"] = "localhost:3000";
+      // "pacific-dawn-60366.herokuapp.com";
       return opts;
     },
   })

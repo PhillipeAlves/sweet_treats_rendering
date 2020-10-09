@@ -274,8 +274,8 @@ app.use(_express2.default.static("public"));
 
 app.use("/api", (0, _expressHttpProxy2.default)("http://secure-brushlands-32363.herokuapp.com/", {
   proxyReqOptDecorator: function proxyReqOptDecorator(opts) {
-    opts.headers["x-forwarded-host"] = "pacific-dawn-60366.herokuapp.com";
-    //"localhost:3000";
+    opts.headers["x-forwarded-host"] = "localhost:3000";
+    // "pacific-dawn-60366.herokuapp.com";
     return opts;
   }
 }));
@@ -726,10 +726,10 @@ var RecipesPage = function (_Component) {
   }, {
     key: "renderRecipes",
     value: function renderRecipes() {
-      return this.props.recipes.map(function (recipe) {
+      return this.props.recipes.map(function (recipe, id) {
         return _react2.default.createElement(
           "div",
-          { key: recipe.id, className: "recipe-container gold-border" },
+          { key: id, className: "recipe-container gold-border" },
           _react2.default.createElement(
             "div",
             { className: "ui-card inner-ui-card recipe-lg" },
@@ -749,17 +749,17 @@ var RecipesPage = function (_Component) {
               _react2.default.createElement(
                 "div",
                 null,
-                recipe.ingredients.split("&").map(function (ingredient) {
+                recipe.ingredients.split("&").map(function (ingredient, id) {
                   if (ingredient == "WET INGREDIENTS" || ingredient == "DRY INGREDIENTS") {
                     return _react2.default.createElement(
                       "h3",
-                      null,
+                      { key: id },
                       ingredient
                     );
                   } else {
                     return _react2.default.createElement(
                       "p",
-                      null,
+                      { key: id },
                       ingredient
                     );
                   }
@@ -778,10 +778,10 @@ var RecipesPage = function (_Component) {
               _react2.default.createElement(
                 "div",
                 { className: "info-text" },
-                recipe.instructions.split("&").map(function (ingredient) {
+                recipe.instructions.split("&").map(function (ingredient, id) {
                   return _react2.default.createElement(
                     "p",
-                    null,
+                    { key: id },
                     ingredient
                   );
                 })

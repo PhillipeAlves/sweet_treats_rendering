@@ -77,12 +77,6 @@ module.exports = require("react-redux");
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-router-dom");
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -164,10 +158,16 @@ var fetchRecipes = exports.fetchRecipes = function fetchRecipes() {
 };
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-router-config");
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 5 */
@@ -244,7 +244,7 @@ var _express = __webpack_require__(10);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _reactRouterConfig = __webpack_require__(4);
+var _reactRouterConfig = __webpack_require__(3);
 
 var _expressHttpProxy = __webpack_require__(11);
 
@@ -347,13 +347,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterConfig = __webpack_require__(4);
+var _reactRouterConfig = __webpack_require__(3);
 
 var _Header = __webpack_require__(13);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _actions = __webpack_require__(3);
+var _actions = __webpack_require__(2);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -391,7 +391,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(2);
+var _reactRouterDom = __webpack_require__(4);
 
 var _reactRedux = __webpack_require__(1);
 
@@ -499,68 +499,42 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(2);
-
-var _reactRedux = __webpack_require__(1);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Home = function Home(_ref) {
-  var auth = _ref.auth;
-
-  var text = auth ? _react2.default.createElement(
-    _reactRouterDom.Link,
-    {
-      style: { fontSize: "3rem" },
-      className: "inner-ui-card treats-link",
-      to: "/recipes"
-    },
-    "SWEET TREATS"
-  ) : _react2.default.createElement(
-    "div",
-    { className: "inner-ui-card" },
-    _react2.default.createElement(
-      "h2",
-      null,
-      "Welcome to"
-    ),
-    _react2.default.createElement(
-      "h1",
-      null,
-      "SWEET TREATS"
-    ),
-    _react2.default.createElement(
-      "p",
-      { className: "login-text" },
-      "Log in to get amazing cooking recipes."
-    ),
-    _react2.default.createElement(
-      "a",
-      { className: "login-btn", href: "/api/auth/google" },
-      _react2.default.createElement(
-        "i",
-        { className: "fab fa-google" },
-        " "
-      ),
-      " Login"
-    )
-  );
-
+var Home = function Home() {
   return _react2.default.createElement(
-    "div",
-    { className: "ui-card gold-border" },
-    text
+    'div',
+    { className: 'ui-card gold-border' },
+    _react2.default.createElement(
+      'div',
+      { className: 'inner-ui-card' },
+      _react2.default.createElement(
+        'h2',
+        null,
+        'Welcome to'
+      ),
+      _react2.default.createElement(
+        'h1',
+        null,
+        'SWEET TREATS'
+      ),
+      _react2.default.createElement(
+        'p',
+        { className: 'login-text' },
+        'Log in to get amazing cooking recipes.'
+      ),
+      _react2.default.createElement(
+        'a',
+        { className: 'login-btn', href: '/api/auth/google' },
+        _react2.default.createElement('i', { className: 'fab fa-google' }),
+        ' Login'
+      )
+    )
   );
 };
 
-function mapStateToProps(_ref2) {
-  var auth = _ref2.auth;
-
-  return { auth: auth };
-}
-
 exports.default = {
-  component: (0, _reactRedux.connect)(mapStateToProps)(Home)
+  component: Home
 };
 
 /***/ }),
@@ -629,7 +603,7 @@ var Resources = function (_Component) {
           _react2.default.createElement(
             'p',
             { className: 'info-text' },
-            'After the authentication the user then has access to the developer resources for the setup of this application and, as a sweet treat, a few amazing cooking recipes collected over the years by the author during his previous career as a Chef.'
+            'After the authentication the user has access to developing resources for the setup of this application and, as a sweet treat, a few amazing cooking recipes collected over the years by the author during his previous career as a Chef.'
           ),
           _react2.default.createElement(
             'h2',
@@ -721,7 +695,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(1);
 
-var _actions = __webpack_require__(3);
+var _actions = __webpack_require__(2);
 
 var _requireAuth = __webpack_require__(18);
 
@@ -869,7 +843,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(1);
 
-var _reactRouterDom = __webpack_require__(2);
+var _reactRouterDom = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -936,11 +910,11 @@ var _react2 = _interopRequireDefault(_react);
 
 var _server = __webpack_require__(20);
 
-var _reactRouterDom = __webpack_require__(2);
+var _reactRouterDom = __webpack_require__(4);
 
 var _reactRedux = __webpack_require__(1);
 
-var _reactRouterConfig = __webpack_require__(4);
+var _reactRouterConfig = __webpack_require__(3);
 
 var _serializeJavascript = __webpack_require__(21);
 
@@ -1110,7 +1084,7 @@ exports.default = function () {
   }
 };
 
-var _actions = __webpack_require__(3);
+var _actions = __webpack_require__(2);
 
 /***/ }),
 /* 28 */
@@ -1123,7 +1097,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _actions = __webpack_require__(3);
+var _actions = __webpack_require__(2);
 
 exports.default = function () {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
